@@ -4,31 +4,42 @@
 
 ### 初始发布
 
-**功能：**
-- ✅ 文档基础操作（create_doc, get_doc, update_doc, delete_doc）
-- ✅ 文档列表和搜索（list_docs）
-- ✅ 文档内容操作（get_content, insert_block, update_block, delete_block）
-- ✅ 文档权限管理（get_permission, set_permission, share_doc）
-- ✅ 文件夹操作（create_folder, list_folders, delete_folder）
+**可用 API 方法（6 个）：**
+
+| 方法 | 说明 |
+|------|------|
+| `list_accessible_documents(keyword?)` | 搜索当前用户有权限访问的文档列表 |
+| `get_my_docs_root_dentry_uuid()` | 获取"我的文档"根目录节点 ID |
+| `create_doc_under_node(name, parentDentryUuid)` | 在指定父节点下创建新文档 |
+| `create_dentry_under_node(name, accessType, parentDentryUuid)` | 创建节点（支持文档/表格/PPT/文件夹等 11 种类型） |
+| `write_content_to_document(content, updateType, targetDentryUuid)` | 写入内容到文档（支持覆盖/续写模式） |
+| `get_document_content_by_url(docUrl)` | 通过 URL 获取文档内容（Markdown 格式） |
 
 **安全特性：**
-- ✅ 路径沙箱保护
-- ✅ UUID 格式验证
-- ✅ 文件扩展名白名单
-- ✅ 文件大小限制
+- ✅ 凭证隔离（推荐 mcporter config 存储）
+- ✅ 权限控制（仅访问有权限的文档）
 - ✅ 命令超时保护
+- ✅ 输入验证（dentryUuid 格式）
 
 **文档：**
-- ✅ SKILL.md 完整 API 说明
-- ✅ README.md 使用指南
+- ✅ SKILL.md 完整 API 说明与示例
+- ✅ README.md 快速开始指南
 - ✅ 故障排查指南
+
+---
+
+## 已知限制
+
+- ⚠️ 创建文档可能返回错误码 `52600007`（企业账号限制或服务临时故障）
+- ⚠️ 仅支持当前用户有权限访问的文档
+- ⚠️ 需要企业钉钉账号才能正常使用全部功能
 
 ---
 
 ## 待开发功能
 
+- [ ] 文档权限管理（如 MCP 服务后续支持）
+- [ ] 文档移动/复制
 - [ ] 文档版本历史
-- [ ] 文档评论和批注
-- [ ] 文档模板管理
 - [ ] 批量操作优化
-- [ ] 离线缓存支持
+

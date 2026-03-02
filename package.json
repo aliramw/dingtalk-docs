@@ -1,7 +1,7 @@
 {
   "name": "dingtalk-docs",
   "version": "0.1.0",
-  "description": "钉钉文档操作技能。使用 mcporter CLI 连接钉钉 MCP server 执行文档创建、读取、更新、删除等操作。",
+  "description": "钉钉文档操作技能。使用 mcporter CLI 连接钉钉 MCP server 执行文档搜索、创建、内容读写等操作。提供 6 个真实可用的 API 方法。",
   "keywords": [
     "dingtalk",
     "docs",
@@ -16,7 +16,7 @@
     "Marila@Dingtalk"
   ],
   "license": "MIT",
-  "homepage": "https://clawhub.com/skills/dingtalk-docs",
+  "homepage": "https://github.com/aliramw/dingtalk-docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliramw/dingtalk-docs.git"
@@ -39,7 +39,8 @@
         "docs": "https://mcp.dingtalk.com",
         "storageMethod": "mcporter config (recommended) or environment variable"
       }
-    ]
+    ],
+    "notes": "Beta: 创建文档功能可能需要企业钉钉账号"
   },
   "scripts": {
     "test": "echo \"No tests yet\""
