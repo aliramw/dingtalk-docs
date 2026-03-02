@@ -27,7 +27,7 @@ npm install -g mcporter
 
 ### 3. 配置凭证
 
-访问 [钉钉 MCP 广场](https://mcp.dingtalk.com) 获取文档服务的 Streamable HTTP URL：
+访问 [钉钉 MCP 广场 钉钉文档 MCP 服务](https://mcp.dingtalk.com/#/detail?mcpId=1047&detailType=marketMcpDetail) 获取文档服务的 Streamable HTTP URL。
 
 ```bash
 mcporter config add dingtalk-docs --url "<你的_URL>"
