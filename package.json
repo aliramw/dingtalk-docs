@@ -1,0 +1,47 @@
+{
+  "name": "dingtalk-docs",
+  "version": "0.1.0",
+  "description": "钉钉文档操作技能。使用 mcporter CLI 连接钉钉 MCP server 执行文档创建、读取、更新、删除等操作。",
+  "keywords": [
+    "dingtalk",
+    "docs",
+    "document",
+    "mcp",
+    "云文档",
+    "openclaw",
+    "skill"
+  ],
+  "author": "Marila@Dingtalk",
+  "contributors": [
+    "Marila@Dingtalk"
+  ],
+  "license": "MIT",
+  "homepage": "https://clawhub.com/skills/dingtalk-docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliramw/dingtalk-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aliramw/dingtalk-docs/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "mcporter": ">=0.7.0"
+  },
+  "clawhub": {
+    "requiresBinaries": ["mcporter"],
+    "credentials": [
+      {
+        "name": "DINGTALK_MCP_DOCS_URL",
+        "description": "钉钉文档 MCP Server Streamable HTTP URL (含访问令牌)",
+        "docs": "https://mcp.dingtalk.com",
+        "storageMethod": "mcporter config (recommended) or environment variable"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  }
+}
