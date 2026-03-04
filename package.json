@@ -1,6 +1,6 @@
 {
   "name": "dingtalk-docs",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "钉钉文档操作技能。使用 mcporter CLI 连接钉钉 MCP server 执行文档搜索、创建、内容读写等操作。提供 6 个真实可用的 API 方法。",
   "keywords": [
     "dingtalk",
@@ -31,7 +31,9 @@
     "mcporter": ">=0.7.0"
   },
   "clawhub": {
-    "requiresBinaries": ["mcporter"],
+    "requiresBinaries": [
+      "mcporter"
+    ],
     "credentials": [
       {
         "name": "DINGTALK_MCP_DOCS_URL",
