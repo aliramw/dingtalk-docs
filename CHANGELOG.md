@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.4] - 2026-03-07
+
+### 修复
+
+- ✅ SKILL.md frontmatter 补充 `mcporter` 二进制依赖声明
+- ✅ SKILL.md frontmatter 补充 `DINGTALK_MCP_DOCS_URL` 凭证声明和 `primaryEnv`
+- ✅ README.md 明确补充环境变量配置方式与凭证敏感性说明
+- ✅ README.md / SKILL.md 新增本地文件脚本行为说明，明确 import / export 会处理工作区内文件
+- ✅ 统一 registry metadata、package.json、README、SKILL 的依赖与凭证口径
+
 ## [0.3.3] - 2026-03-07
 
 ### 文档一致性修复

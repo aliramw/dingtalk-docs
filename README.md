@@ -55,6 +55,14 @@ npm install -g mcporter
 mcporter config add dingtalk-docs --url "<你的_URL>"
 ```
 
+也可以使用环境变量：
+
+```bash
+export DINGTALK_MCP_DOCS_URL="<你的_URL>"
+```
+
+> 这个 URL 含访问令牌，属于敏感凭证。推荐优先用 `mcporter config` 保存，避免泄露到 shell 历史。
+
 ### 4. 使用示例
 
 ```bash
@@ -94,6 +102,21 @@ mcporter call dingtalk-docs.get_document_content_by_url --args '{"docUrl": "http
 - **docUrl 必须是完整 URL**（`https://alidocs.dingtalk.com/i/nodes/{dentryUuid}`），不能只传 ID
 - 凭证 URL 包含访问令牌，请妥善保管
 - 仅能操作当前用户有权限访问的文档
+
+## 本地文件脚本说明
+
+`scripts/` 目录中的辅助脚本会读写本地文件：
+
+- `import_docs.py`：读取工作区内的本地 Markdown / TXT 文件并导入到钉钉文档
+- `export_docs.py`：将钉钉文档内容导出到工作区内的本地 Markdown 文件
+- `create_doc.py`：读取输入内容并创建文档
+
+这些脚本已做安全限制：
+
+- 仅允许访问工作区内路径
+- 使用 `resolve_safe_path()` 防止目录遍历
+- 限制文件大小和扩展名
+- 仅通过 `mcporter` 调用 MCP 服务，不直接发起网络请求
 
 ## 目录结构
 
