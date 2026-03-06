@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.3] - 2026-03-07
+
+### 文档一致性修复
+
+- ✅ README.md 的读取示例补充灰度提示，避免用户误以为所有实例都能直接调用读取接口
+- ✅ references/api-reference.md 补充 `get_document_content_by_url` 灰度说明
+- ✅ references/api-reference.md 的“搜索并读取”工作流改为条件可用说明
+- ✅ references/error-codes.md 新增“方法列表只显示 5 个工具”时的处理规则
+
 ## [0.3.2] - 2026-03-07
 
 ### 文档更新
