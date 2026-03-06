@@ -8,8 +8,30 @@
 - ✅ 文档创建 — 在指定节点下创建新文档
 - ✅ 多类型节点创建 — 支持文档/表格/PPT/文件夹等 11 种类型
 - ✅ 内容写入 — 覆盖写入或续写模式（支持 Markdown）
-- ✅ 内容读取 — 通过 URL 获取文档 Markdown 内容
+- ✅ 内容读取 — 通过 URL 获取文档 Markdown 内容（当前为灰度能力）
 - ✅ 根目录获取 — 获取"我的文档"根节点 ID
+
+## 当前已知限制
+
+### `get_document_content_by_url` 仍在灰度发布
+
+根据 GitHub issue #1 下维护者的回复：`get_document_content_by_url` **目前还在灰度中，全量发布还需要一点时间**。
+
+这意味着：
+
+- 通过 **钉钉 MCP 广场** 获取的 Streamable HTTP URL，接入后**可能只会看到 5 个工具**
+- 缺失 `get_document_content_by_url` **不代表你配置错了，也不一定是权限问题**
+- 当前更可能是**官方服务端尚未对你的实例放量**
+
+目前常见的 5 个可见工具是：
+
+- `list_accessible_documents`
+- `get_my_docs_root_dentry_uuid`
+- `create_doc_under_node`
+- `create_dentry_under_node`
+- `write_content_to_document`
+
+如果你在 `mcporter list` 或其他 MCP 客户端里看不到 `get_document_content_by_url`，先按**服务端灰度未放开**处理，不要先怀疑本地配置。
 
 ## 快速开始
 
@@ -54,14 +76,14 @@ mcporter call dingtalk-docs.get_document_content_by_url --args '{"docUrl": "http
 
 ## 方法列表
 
-| 方法 | 说明 | 必填参数 |
-|------|------|---------|
-| `get_my_docs_root_dentry_uuid` | 获取根目录 ID | 无 |
-| `list_accessible_documents` | 搜索文档 | 无（keyword 选填） |
-| `create_doc_under_node` | 创建文档 | name, parentDentryUuid |
-| `create_dentry_under_node` | 创建节点（多类型） | name, accessType, parentDentryUuid |
-| `write_content_to_document` | 写入内容 | content, updateType, targetDentryUuid |
-| `get_document_content_by_url` | 获取文档内容 | docUrl |
+| 方法 | 说明 | 必填参数 | 状态 |
+|------|------|---------|------|
+| `get_my_docs_root_dentry_uuid` | 获取根目录 ID | 无 | 稳定可用 |
+| `list_accessible_documents` | 搜索文档 | 无（keyword 选填） | 稳定可用 |
+| `create_doc_under_node` | 创建文档 | name, parentDentryUuid | 稳定可用 |
+| `create_dentry_under_node` | 创建节点（多类型） | name, accessType, parentDentryUuid | 稳定可用 |
+| `write_content_to_document` | 写入内容 | content, updateType, targetDentryUuid | 稳定可用 |
+| `get_document_content_by_url` | 获取文档内容 | docUrl | **灰度中，部分实例不可见** |
 
 完整参数说明请查看 [references/api-reference.md](references/api-reference.md)
 
